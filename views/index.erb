@@ -7,6 +7,20 @@
     <title><%= @title %></title>
   </head>
   <body>
-    <p><%= @test_result %></p>
+    <div id="form">
+      <h1>Pre-req Check</h1>
+        <form action="/" method="POST">
+          <label for="word">Enter Course:</label>
+          <input type="text" name="course">
+          <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <% if @result %>
+      <div id="output">
+        <p>The Pre-req is: <%= @result %>.</p>  
+      </div>
+    <% end%>
+
   </body>
 </html>

@@ -11,15 +11,16 @@ def set_title
   @title = "Pre-req Check"
 end
 
-def test_function
-  @test_result = pre_req_checker
+def user_input
+  @course = params[:course].to_s
+  @result = pre_req_check(@course)
 end
 
 get '/' do
-  test_function
   erb :index
 end
 
 post '/' do
+  user_input
   erb :index
 end
