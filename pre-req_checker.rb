@@ -28,7 +28,7 @@ def pre_req_check(course)
       end
 
     end
-
+    concurrent
 end
 
-pre_req_check("BMES 238")
+p pre_req_check("BIO 202")
