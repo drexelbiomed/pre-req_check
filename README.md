@@ -15,3 +15,7 @@ Current state of application can be viewed here: [Pre-req Check](https://pre-req
 * Some courses begin result with "And" or "Or". Known courses: BMES 325, BMES 451.
 * Output should contain minimum grade.
 * Input field should accept upper and lower case entries.
+
+## Wish List
+
+* Auto-complete for input.
