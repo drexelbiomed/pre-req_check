@@ -5,7 +5,7 @@ Web application that identifies pre-requisites, co-requisites, and post-requisit
 ## To-do
 
 * Extract and order information from hashes.
-* Create user interfact with the [Bulma CSS Framework](https://bulma.io/).
+* Create user interface with the [Bulma CSS Framework](https://bulma.io/).
 
 ## Known Issues
 
