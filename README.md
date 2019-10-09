@@ -12,6 +12,6 @@ Current state of application can be viewed here: [Pre-req Check](https://pre-req
 ## Known Issues
 
 * Courses with no pre-requisites return an empty value. Should present text indicating no pre-requisites.
-* Some courses begin result with "And". Known courses: BMES 325, BMES 451.
+* Some courses begin result with "And" or "Or". Known courses: BMES 325, BMES 451.
 * Output should contain minimum grade.
 * Input field should accept upper and lower case entries.
