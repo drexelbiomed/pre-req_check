@@ -1,7 +1,7 @@
 require 'csv'
 
 def pre_req_check(course)
-  pre_requisites = []
+  pre_requisite_data = []
 
   CSV.foreach('data/STU-Course Catalog_201915.csv', headers: true) do |header|
     
@@ -15,9 +15,9 @@ def pre_req_check(course)
       sequence["Concurrency Indicator"] = header["Cat Preq Concurrency Ind"]
       sequence["Right Parenthesis"] = header["Cat Preq Rparen"]
     end
-    pre_requisites << sequence
+    pre_requisite_data << sequence
   end
-  pre_requisites.compact.uniq
+  pre_requisites = pre_requisite_data.compact.uniq.sort_by { |k| k["Sequence Number"]}
 end
 
 puts pre_req_check("MATH 300")
