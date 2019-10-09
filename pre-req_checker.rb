@@ -31,4 +31,4 @@ def pre_req_check(course)
   result.compact.join(" ")
 end
 
-# p pre_req_check("BMES 303")
+p pre_req_check("BMES 303")
