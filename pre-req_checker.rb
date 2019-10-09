@@ -20,4 +20,4 @@ def pre_req_check(course)
   pre_requisites.compact.uniq
 end
 
-p pre_req_check("BMES 325")
+puts pre_req_check("MATH 300")
