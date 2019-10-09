@@ -18,6 +18,17 @@ def pre_req_check(course)
     pre_requisite_data << sequence
   end
   pre_requisites = pre_requisite_data.compact.uniq.sort_by { |k| k["Sequence Number"]}
+
+  result = []
+  pre_requisites.each do |pre_req|
+    result << pre_req["Connector Description"]
+    result << pre_req["Left Parenthesis"]
+    result << pre_req["pre-requisite"]
+    result << pre_req["Concurrency Indicator"]
+    result << pre_req["Right Parenthesis"]
+  end
+
+  result.compact.join(" ")
 end
 
-puts pre_req_check("MATH 300")
+# p pre_req_check("BMES 303")
