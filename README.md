@@ -16,6 +16,7 @@ Anything from the [Course Descriptions page](http://catalog.drexel.edu/coursedes
 * Output should contain minimum grade.
 * Present different output area if course not found.
 * Account for all input edge cases.
+* Add post-requisites.
 
 ## Wish List
 
