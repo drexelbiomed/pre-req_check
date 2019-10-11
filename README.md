@@ -10,6 +10,7 @@ Anything from the [Course Descriptions page](http://catalog.drexel.edu/coursedes
 * Courses with no pre-requisites return an empty value. Should present text indicating no pre-requisites.
 * Some courses begin result with "And" or "Or". Known courses: BMES 325, BMES 451.
 * Output should contain minimum grade.
+* Present different output area if course not found.
 
 ## Wish List
 

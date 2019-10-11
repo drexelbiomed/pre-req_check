@@ -8,10 +8,11 @@ def pre_req_check(course)
   course = "#{course_code} #{course_number}"
 
   pre_requisite_data = []
+  
 
   CSV.foreach('data/STU-Course Catalog_201915.csv', headers: true) do |header|
     
-    if header["Cat Course"] == course.upcase
+    if header["Cat Course"] == course
       sequence = Hash.new
       sequence["Sequence Number"] = header["Cat Preq Seqno"]
       sequence["Connector"] = header["Cat Preq Connector"]
@@ -33,8 +34,12 @@ def pre_req_check(course)
     result << pre_req["Concurrency Indicator"]
     result << pre_req["Right Parenthesis"]
   end
-
-  result.compact.join(" ")
+  
+  if result == []
+    "That course was not found. Please try another course."
+  else
+    result.compact.join(" ")
+  end
 end
 
-p pre_req_check("wut")
+p pre_req_check("MATH 300")
