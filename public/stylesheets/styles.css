@@ -3,11 +3,17 @@
   src: url('../stylesheets/fonts/FuturaCondensedBold.otf');
 }
 
-#image {
+/* #image {
   max-width: 40%;
-}
+} */
 
 h1 {
   font-family: futuraBoldCondensed, arial, sans-serif;
   color: #07294D;
+}
+
+#title {
+  text-align: center;
+  color: #07294D;
+  padding-top: 50px;
 }

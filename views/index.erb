@@ -19,36 +19,39 @@
             Please Note:
           </h1>
           <p class="subtitle">
-            This tool is in the initial and should not be shared widely until declared free of any existing issues. Please report issues to Carlos Diaz.
+            This tool is in the initial test phase and should not be shared widely. Please report issues to Carlos Diaz.
           </p>
         </div>
       </div>
     </section>
 
-      <div>
-          <img id="image" src="/images/Drexel_vertical_blue.png" alt="Drexel Logo">
-      </div>
+    <section class=section>
+      <div class="container">
 
-      <div>
-        <h1><%= @title %></h1>
-      </div>
-
-      <div id="form">
-          <form action="/" method="POST">
-            <label for="word">Enter Course:</label>
-            <input type="text" name="course">
-            <inputtype="submit" value="Submit">
-          </form>
-      </div>
-
-      <% if @result %>
-        <div id="output">
-          <p>Entered Course: <%= @course %></p>
-          <p>The Pre-req is: <%= @result %>.</p>  
+        <div>
+          <img class="container image is-centered" id="image" src="images/Drexel_vertical_blue_400px.png" alt="Drexel Logo">
         </div>
-      <% end%>
 
-    </div>
-    
+        <div class="columns is-mobile is-centered">
+          <h1 id="title" class="title is-1"><%= @title %></h1>
+        </div>
+      <!-- 
+        <div id="form">
+            <form action="/" method="POST">
+              <label for="word">Enter Course:</label>
+              <input type="text" name="course">
+              <inputtype="submit" value="Submit">
+            </form>
+        </div>
+
+        <% if @result %>
+          <div id="output">
+            <p>Entered Course: <%= @course %></p>
+            <p>The Pre-req is: <%= @result %>.</p>  
+          </div>
+        <% end%>
+      -->
+      </div>
+    </section>
   </body>
 </html>
