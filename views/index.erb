@@ -10,23 +10,25 @@
     <title><%= @title %></title>
   </head>
   <body>
-    <div class="container">
+    <div class="container ">
 
-      <div class="title-area">
+      <div class="title-area columns is-centered">
           <img id="image" src="/images/Drexel_vertical_blue.png" alt="Drexel Logo">
-        <h1 class="title is-1"><%= @title %></h1>
       </div>
 
-    <div id="form">
+      <div class="columns is-centered">
+        <h1 class="title is-1"><%= @title %></h1>
+      </div>
+    <div id="form" class="columns">
         <form action="/" method="POST">
-          <label for="word">Enter Course:</label>
+          <label class="level" for="word">Enter Course:</label>
           <input type="text" name="course">
-          <input type="submit" value="Submit">
+          <input class="level" type="submit" value="Submit">
         </form>
     </div>
 
     <% if @result %>
-      <div id="output">
+      <div id="output" class="columns">
       <p>Entered Course: <%= @course %></p>
         <p>The Pre-req is: <%= @result %>.</p>  
       </div>
