@@ -1,3 +1,14 @@
+@font-face {
+  font-family: futuraBoldCondensed;
+  src: url('../stylesheets/fonts/FuturaCondensedBold.otf');
+}
+
 #image {
   max-width: 40%;
+}
+
+h1 {
+  font-family: futuraBoldCondensed, arial, sans-serif;
+  color: #07294D;
+  font-size: 36px;
 }
