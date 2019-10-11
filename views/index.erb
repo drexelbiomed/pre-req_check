@@ -11,28 +11,40 @@
     <title><%= @title %></title>
   </head>
   <body>
-    <div class="container ">
 
-      <div class="image-area columns is-centered">
+    <section class="hero is-danger is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Please Note:
+          </h1>
+          <p class="subtitle">
+            This tool is in the initial and should not be shared widely until declared free of any existing issues. Please report issues to Carlos Diaz.
+          </p>
+        </div>
+      </div>
+    </section>
+
+      <div>
           <img id="image" src="/images/Drexel_vertical_blue.png" alt="Drexel Logo">
       </div>
 
-      <div class="columns is-centered">
-        <h1 class="title is-1"><%= @title %></h1>
+      <div>
+        <h1><%= @title %></h1>
       </div>
 
-      <div id="form" class="columns is-centered">
+      <div id="form">
           <form action="/" method="POST">
-            <label class="level" for="word">Enter Course:</label>
+            <label for="word">Enter Course:</label>
             <input type="text" name="course">
-            <input class="level" type="submit" value="Submit">
+            <inputtype="submit" value="Submit">
           </form>
       </div>
 
       <% if @result %>
-        <div id="output" class="columns is-centered">
-          <p class="level">Entered Course: <%= @course %></p>
-          <p class="level">The Pre-req is: <%= @result %>.</p>  
+        <div id="output">
+          <p>Entered Course: <%= @course %></p>
+          <p>The Pre-req is: <%= @result %>.</p>  
         </div>
       <% end%>
 
