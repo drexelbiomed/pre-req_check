@@ -13,3 +13,13 @@
 #input {
   padding-top: 50px;
 }
+
+#output {
+  padding-top: 50px;
+}
+
+p {
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}

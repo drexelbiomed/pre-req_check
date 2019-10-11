@@ -51,10 +51,12 @@
         </div>
 
         <% if @result %>
-          <div id="output">
-            <p>Entered Course: <%= @course %></p>
-            <p>The Pre-req is: <%= @result %>.</p>  
+          
+          <div class="content is-mobile" id="output">
+              <p>Entered Course: <span><%= @course %></span></p>
+              <p>Pre-requisites: <span><%= @result %></span></p>  
           </div>
+
         <% end%>
 
       </div>

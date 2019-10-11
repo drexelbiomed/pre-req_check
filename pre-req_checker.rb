@@ -1,11 +1,17 @@
 require 'csv'
 
 def pre_req_check(course)
+
+  course_code = course.split(" ")[0].upcase
+  course_number = course.split(" ")[1]
+
+  course = "#{course_code} #{course_number}"
+
   pre_requisite_data = []
 
   CSV.foreach('data/STU-Course Catalog_201915.csv', headers: true) do |header|
     
-    if header["Cat Course"] == course
+    if header["Cat Course"] == course.upcase
       sequence = Hash.new
       sequence["Sequence Number"] = header["Cat Preq Seqno"]
       sequence["Connector"] = header["Cat Preq Connector"]
@@ -31,4 +37,4 @@ def pre_req_check(course)
   result.compact.join(" ")
 end
 
-p pre_req_check("BMES 303")
+p pre_req_check("wut")
