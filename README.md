@@ -11,6 +11,7 @@ Current state of application can be viewed here: [Pre-req Check](https://pre-req
 
 ## Known Issues
 
+* Entered Course & output are not vertically aligned.
 * Courses with no pre-requisites return an empty value. Should present text indicating no pre-requisites.
 * Some courses begin result with "And" or "Or". Known courses: BMES 325, BMES 451.
 * Output should contain minimum grade.

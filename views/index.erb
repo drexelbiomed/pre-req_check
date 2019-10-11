@@ -19,20 +19,22 @@
       <div class="columns is-centered">
         <h1 class="title is-1"><%= @title %></h1>
       </div>
-    <div id="form" class="columns is-centered">
-        <form action="/" method="POST">
-          <label class="level" for="word">Enter Course:</label>
-          <input type="text" name="course">
-          <input class="level" type="submit" value="Submit">
-        </form>
-    </div>
 
-    <% if @result %>
-      <div id="output" class="columns">
-      <p>Entered Course: <%= @course %></p>
-        <p>The Pre-req is: <%= @result %>.</p>  
+      <div id="form" class="columns is-centered">
+          <form action="/" method="POST">
+            <label class="level" for="word">Enter Course:</label>
+            <input type="text" name="course">
+            <input class="level" type="submit" value="Submit">
+          </form>
       </div>
-    <% end%>
+
+      <% if @result %>
+        <div id="output" class="columns is-centered">
+          <p class="level">Entered Course: <%= @course %></p>
+          <p class="level">The Pre-req is: <%= @result %>.</p>  
+        </div>
+      <% end%>
+
     </div>
     
   </body>
