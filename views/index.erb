@@ -35,14 +35,18 @@
         <div class="columns is-mobile is-centered">
           <h1 id="title" class="title is-1"><%= @title %></h1>
         </div>
-      <!-- 
-        <div id="form">
-            <form action="/" method="POST">
-              <label for="word">Enter Course:</label>
-              <input type="text" name="course">
-              <inputtype="submit" value="Submit">
-            </form>
-        </div>
+
+        <form action="/" method="POST">
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" name ="course" placeholder="Find a course">
+            </div>
+            <div class="control">
+              <input class="button is-info" type="submit" value="Search">
+              </input>
+            </div>
+          </div>
+        </form>
 
         <% if @result %>
           <div id="output">
@@ -50,7 +54,7 @@
             <p>The Pre-req is: <%= @result %>.</p>  
           </div>
         <% end%>
-      -->
+
       </div>
     </section>
   </body>
