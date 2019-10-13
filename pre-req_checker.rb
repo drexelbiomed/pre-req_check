@@ -34,9 +34,11 @@ def pre_req_check(course)
     result << pre_req["Concurrency Indicator"]
     result << pre_req["Right Parenthesis"]
   end
-  
+
   if result == []
     "That course was not found. Please try another course."
+  elsif result.compact == [" "]
+    "This course does not have any pre-requisites."
   else
     if result.include? "Y"
       concurrency = []
@@ -54,4 +56,4 @@ def pre_req_check(course)
   end
 end
 
-p pre_req_check("BMES 238")
+p pre_req_check("ANTH 101")
