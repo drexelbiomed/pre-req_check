@@ -2,9 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= @title %></title>
   </head>
@@ -20,11 +26,11 @@
 
       <h1 class="title"><%= @title %></h1>
 
-      <form class="form" action="/" method="POST">
-        <label for="word">Enter Course:</label>
-        <input type="text" name="course">
-        <input type="submit" value="Submit">
-      </form>
+      <!-- FORM -->
+      <div class="input md-form form-lg">
+        <input type="text" id="inputLGEx" class="form-control form-control-lg">
+        <label for="inputLGEx">Large input</label>
+      </div>
 
       <section class="output">
         <% if @result %>
@@ -40,5 +46,13 @@
 
     </div>
 
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
   </body>
 </html>
