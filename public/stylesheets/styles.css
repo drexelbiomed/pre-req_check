@@ -3,6 +3,10 @@
   src: url("../stylesheets/fonts/FuturaCondensedBold.otf");
 }
 
+.container {
+  display: grid
+}
+
 #title {
   font-family: futuraBoldCondensed, arial, sans-serif;
   text-align: center;
