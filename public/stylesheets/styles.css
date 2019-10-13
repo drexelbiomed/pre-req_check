@@ -4,10 +4,43 @@
 }
 
 .container {
-  display: grid
+  display: grid;
+  grid-template-columns: repeat(3,1fr)
+  grid-template-rows: repeat(5,1fr);
+  grid-template-areas:
+  "warning warning warning"
+  ". image ."
+  ". title ."
+  ". form ."
+  ". output .";
 }
 
-#title {
+.header {
+  grid-area: warning;
+}
+
+.image {
+  grid-area: image;
+  width: 30%;
+  margin: auto;
+}
+
+.title {
+  grid-area: title;
+  margin: auto;
+}
+
+.form {
+  grid-area: form;
+  margin: auto;
+}
+
+.output {
+  grid-area: output;
+  margin: auto;
+}
+
+/* #title {
   font-family: futuraBoldCondensed, arial, sans-serif;
   text-align: center;
   color: #07294d;
@@ -26,4 +59,4 @@ p {
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
-}
+} */

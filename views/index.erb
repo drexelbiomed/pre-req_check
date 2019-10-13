@@ -18,23 +18,23 @@
 
       <img class="image" src="images/Drexel_vertical_blue.png" alt="Drexel Logo">
 
-      <h1 id="title" class="title is-1"><%= @title %></h1>
+      <h1 class="title"><%= @title %></h1>
 
-      <form action="/" method="POST">
+      <form class="form" action="/" method="POST">
         <label for="word">Enter Course:</label>
         <input type="text" name="course">
         <input type="submit" value="Submit">
       </form>
 
       <section class="output">
-          <% if @result %>
-            
-            <div class="content is-mobile" id="output">
-                <p>Entered Course: <span><%= @course %></span></p>
-                <p>Pre-requisites: <span><%= @result %></span></p>  
-            </div>
+        <% if @result %>
+          
+          <div class="content is-mobile" id="output">
+              <p>Entered Course: <span><%= @course %></span></p>
+              <p>Pre-requisites: <span><%= @result %></span></p>  
+          </div>
 
-          <% end%>
+        <% end%>
 
       </section>
 
