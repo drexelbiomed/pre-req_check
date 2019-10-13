@@ -40,23 +40,59 @@
   margin: auto;
 }
 
-/* #title {
-  font-family: futuraBoldCondensed, arial, sans-serif;
-  text-align: center;
-  color: #07294d;
-  padding-top: 50px;
+/* Text Field Customization Start =========== */
+input         {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:183px;
+  border:none;
+  border-bottom:1px solid #07294D;
+  font-family: Arial, sans-serif;
+  
+}
+input:focus     { outline:none; }
+
+/* LABEL ======================================= */
+label          {
+  color:#333333; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
 }
 
-#input {
-  padding-top: 50px;
+/* active state */
+input:focus ~ label, input:valid ~ label     {
+  top:-20px;
+  font-size:14px;
+  color:#A7A8AA;
 }
 
-#output {
-  padding-top: 50px;
+/* BOTTOM BARS ================================= */
+.bar  { position:relative; display:block; width:300px; }
+.bar:before, .bar:after   {
+  content:'';
+  height:1px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#07294D; 
+  transition:0.2s ease all; 
+}
+.bar:before {
+  left:16%;
+}
+.bar:after {
+  right:50%; 
 }
 
-p {
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-} */
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* Text Field Customization End =========== */
