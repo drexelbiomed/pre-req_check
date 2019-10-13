@@ -38,8 +38,20 @@ def pre_req_check(course)
   if result == []
     "That course was not found. Please try another course."
   else
-    result.compact.join(" ")
+    if result.include? "Y"
+      concurrency = []
+      result.compact.each do |item|
+        if item == "Y"
+          concurrency << "- can be taken concurrently"
+        else
+          concurrency << item
+        end
+      end
+      concurrency.join(" ")
+    else
+      result.compact.join(" ")
+    end
   end
 end
 
-p pre_req_check("MATH 300")
+p pre_req_check("BMES 238")
