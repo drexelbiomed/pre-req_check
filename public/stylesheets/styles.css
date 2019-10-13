@@ -21,7 +21,7 @@
 
 .image {
   grid-area: image;
-  width: 30%;
+  width: 25%;
   margin: auto;
 }
 
@@ -43,13 +43,9 @@
 #button {
   border: 0;
   background-color:#FFC600;
-  margin: 0 auto;
   padding: 7px 20px;
   cursor: pointer;
   color: #0d1e31;
   font: 16px/1 futuraBoldCondensed,arial,sans-s;
   text-shadow: white 0 1px 1px;
-  vertical-align: top;
-  width: auto;
-  margin-top: 15px;
 }
