@@ -5,7 +5,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3,1fr)
+  grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(5,1fr);
   grid-template-areas:
   "warning warning warning"
@@ -17,22 +17,27 @@
 
 .header {
   grid-area: warning;
+  height: 45%;
+  width: 100%;
+  text-align: center;
 }
 
 .image {
   grid-area: image;
-  width: 25%;
+  width: 50%;
   margin: auto;
 }
 
 .title {
   grid-area: title;
   margin: auto;
+  height: 50%;
 }
 
 .input {
   grid-area: input;
   margin: auto;
+  height: 100%;
 }
 
 .output {
