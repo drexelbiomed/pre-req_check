@@ -6,13 +6,14 @@
 .container {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(5,1fr);
+  grid-template-rows: 20% auto auto auto auto;
   grid-template-areas:
   "warning warning warning"
   ". image ."
   ". title ."
   ". input ."
   ". output .";
+  grid-row-gap: 20px;
 }
 
 .header {
@@ -20,6 +21,7 @@
   height: 45%;
   width: 100%;
   text-align: center;
+  justify-self: center;
 }
 
 .image {
@@ -32,6 +34,9 @@
   grid-area: title;
   margin: auto;
   height: 50%;
+  font-family: futuraBoldCondensed, Arial, Helvetica, sans-serif;
+  color: #0d1e31 !important;
+  font-weight: bold;
 }
 
 .input {
@@ -53,4 +58,11 @@
   color: #0d1e31;
   font: 16px/1 futuraBoldCondensed,arial,sans-s;
   text-shadow: white 0 1px 1px;
+  margin: 0 auto;
+}
+
+b {
+  color: #0d1e31;
+  font-family: futuraBoldCondensed, Arial, Helvetica, sans-serif;
+  font-size: large;
 }
