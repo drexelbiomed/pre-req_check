@@ -23,8 +23,16 @@ def pre_req_check(course)
       sequence["Right Parenthesis"] = header["Cat Preq Rparen"]
     end
     pre_requisite_data << sequence
+
+    if header["Cat Preq Course"] == course
+      postreq = Hash.new
+      postreq["postreq"] = header["Cat Course"]
+    end
+
   end
-  pre_requisites = pre_requisite_data.compact.uniq.sort_by { |k| k["Sequence Number"]}
+  pre_requisite_data
+
+  pre_requisites = pre_requisite_data.compact.uniq
 
   result = []
   pre_requisites.each do |pre_req|
@@ -34,6 +42,8 @@ def pre_req_check(course)
     result << pre_req["Concurrency Indicator"]
     result << pre_req["Right Parenthesis"]
   end
+
+  result
 
   if result == []
     "That course was not found. Please try another course."
@@ -56,4 +66,4 @@ def pre_req_check(course)
   end
 end
 
-p pre_req_check("ANTH 101")
+p pre_req_check("MATH 122")
