@@ -41,39 +41,40 @@ def pre_req_check(course)
 
   post_requisite = post_requisite_data.compact.uniq
   post_requisite.delete_if { |postreq| postreq["Concurrency Indicator"] != "Y" }
-  # pre_requisites = pre_requisite_data.compact.uniq
 
-  # result = []
-  # # pre-req cleanup
-  # pre_requisites.each do |pre_req|
-  #   result << pre_req["Connector Description"]
-  #   result << pre_req["Left Parenthesis"]
-  #   result << pre_req["pre-requisite"]
-  #   result << pre_req["Concurrency Indicator"]
-  #   result << pre_req["Right Parenthesis"]
-  # end
+  pre_requisites = pre_requisite_data.compact.uniq
 
-  # result
+  result = []
+  # pre-req cleanup
+  pre_requisites.each do |pre_req|
+    result << pre_req["Connector Description"]
+    result << pre_req["Left Parenthesis"]
+    result << pre_req["pre-requisite"]
+    result << pre_req["Concurrency Indicator"]
+    result << pre_req["Right Parenthesis"]
+  end
 
-  # if result == []
-  #   "That course was not found. Please try another course."
-  # elsif result.compact == [" "]
-  #   "This course does not have any pre-requisites."
-  # else
-  #   if result.include? "Y"
-  #     concurrency = []
-  #     result.compact.each do |item|
-  #       if item == "Y"
-  #         concurrency << "- can be taken concurrently"
-  #       else
-  #         concurrency << item
-  #       end
-  #     end
-  #     concurrency.join(" ")
-  #   else
-  #     result.compact.join(" ")
-  #   end
-  # end
+  result
+
+  if result == []
+    "That course was not found. Please try another course."
+  elsif result.compact == [" "]
+    "This course does not have any pre-requisites."
+  else
+    if result.include? "Y"
+      concurrency = []
+      result.compact.each do |item|
+        if item == "Y"
+          concurrency << "- can be taken concurrently"
+        else
+          concurrency << item
+        end
+      end
+      concurrency.join(" ")
+    else
+      result.compact.join(" ")
+    end
+  end
 end
 
-p pre_req_check("ECE 201")
+p pre_req_check("BMES 451")
