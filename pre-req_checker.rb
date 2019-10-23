@@ -24,15 +24,23 @@ def pre_req_check(course)
     end
     pre_requisite_data << sequence
 
+    
+
     if header["Cat Preq Course"] == course
       postreqs = Hash.new
       postreqs["postreq"] = header["Cat Course"]
+      postreqs["Concurrency Indicator"] = header["Cat Preq Concurrency Ind"]
+      postreqs["Concurrency Course"] = header["Cat Course"]
+
+      
     end
+
     post_requisite_data << postreqs
     
   end
 
   post_requisite = post_requisite_data.compact.uniq
+  post_requisite.delete_if { |postreq| postreq["Concurrency Indicator"] != "Y" }
   # pre_requisites = pre_requisite_data.compact.uniq
 
   # result = []
@@ -68,4 +76,4 @@ def pre_req_check(course)
   # end
 end
 
-# puts pre_req_check("PHIL 101")
+p pre_req_check("ECE 201")
