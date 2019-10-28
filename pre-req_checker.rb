@@ -77,4 +77,4 @@ def pre_req_check(course)
   end
 end
 
-p pre_req_check("BMES 451")
+p pre_req_check("MATH 121")
