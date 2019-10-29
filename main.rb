@@ -12,7 +12,7 @@ def set_title
 end
 
 def user_input
-  @course = params[:course].to_s
+  @course = params[:course].to_s.upcase
   @result = pre_req_check(@course)
 end
 

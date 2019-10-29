@@ -7,7 +7,8 @@ Current state of application can be viewed here: [Pre-req Check](https://pre-req
 Anything from the [Course Descriptions page](http://catalog.drexel.edu/coursedescriptions/quarter/undergrad/) will work, but enter MATH 300 or BMES 202 for a quick test.
 
 ## Known Issues
-* Some courses begin result with "And" or "Or". Known courses: BMES 325, BMES 451.
+* Some courses begin result with "And" or "Or". Known course(s): BMES 325, BMES 451.
+* Some courses end with "And" or "Or". Known course(s): MATH 121.
 * Does not recognize course without space. (BMES302)
 
 ## To-do list
