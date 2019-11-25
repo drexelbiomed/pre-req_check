@@ -40,7 +40,8 @@
           
           <div class="content is-mobile" id="output">
               <p><b>Entered Course</b>: <span><%= @course %></span></p>
-              <p><b>Pre-requisites</b>: <span><%= @result %></span></p>  
+              <p><b>Pre-requisites</b>: <span><%= @result[0] %></span></p>
+              <p><b>Post-requisites</b>: <span><%= @result[-1] %></span></p>    
           </div>
 
         <% end%>

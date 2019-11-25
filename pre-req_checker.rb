@@ -89,7 +89,7 @@ def pre_req_check(input)
 
     end
 
-    clean_info << clean_post_req.join(" ")
+    clean_info << clean_post_req.join(", ")
   end
 
   info_cleanup(pre_req_extract,post_req_extract)
@@ -134,4 +134,4 @@ def pre_req_check(input)
   # end
 end
 
-p pre_req_check("ECE 201")
+# p pre_req_check("ECE 201")
