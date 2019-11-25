@@ -54,9 +54,36 @@ def pre_req_check(input)
     all_data << pre_requisite_data
     all_data << post_requisite_data
   end
-  csv_info_extract(course)
-
   
+  extracted_info = csv_info_extract(course)
+  pre_req_extract = extracted_info[0]
+  post_req_extract = extracted_info[-1]
+
+  def info_cleanup(pre_req_extract,post_req_extract)
+    clean_info = []
+    # pre-req cleanup
+    clean_pre_req = []
+    pre_req_extract = pre_req_extract.compact.uniq
+    
+    pre_req_extract.each do |pre_req|
+      clean_pre_req << pre_req["Connector Description"]
+      clean_pre_req << pre_req["Left Parenthesis"]
+      clean_pre_req << pre_req["pre-requisite"]
+      clean_pre_req << pre_req["Concurrency Indicator"]
+      clean_pre_req << pre_req["Right Parenthesis"]
+    end
+    clean_pre_req = clean_pre_req.compact.map do |item|
+      if item == "Y"
+        item = "- can be taken concurrently"
+      else
+        item
+      end
+    end
+
+    clean_info << clean_pre_req
+  end
+
+  info_cleanup(pre_req_extract,post_req_extract)
 
 
 
@@ -98,4 +125,4 @@ def pre_req_check(input)
   # end
 end
 
-p pre_req_check("MaTH 122")
+p pre_req_check("CHEM 245")
