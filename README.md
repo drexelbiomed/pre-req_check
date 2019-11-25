@@ -16,7 +16,6 @@ Anything from the [Course Descriptions page](http://catalog.drexel.edu/coursedes
 * Impliment error handling for input.
 * Output should contain minimum grade.
 * Account for all input edge cases.
-* Add post-requisites.
 
 ## Wish List
 
