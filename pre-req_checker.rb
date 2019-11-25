@@ -92,46 +92,23 @@ def pre_req_check(input)
     clean_info << clean_post_req.join(", ")
   end
 
-  info_cleanup(pre_req_extract,post_req_extract)
+  csv_results = info_cleanup(pre_req_extract,post_req_extract)
 
+  def query_results(csv_results)
 
+    if csv_results[0] == "" || csv_results[0] == " "
+      csv_results[0] = "None Found."
+    end
 
-  # post_requisite = post_requisite_data.compact.uniq
-  # post_requisite.delete_if { |postreq| postreq["Concurrency Indicator"] != "Y" }
+    if csv_results[0] == "" || csv_results[0] == " "
+      csv_results[-1] = "None Found."
+    end
 
-  # pre_requisites = pre_requisite_data.compact.uniq
+    csv_results
+  end
 
-  # result = []
-  # # pre-req cleanup
-  # pre_requisites.each do |pre_req|
-  #   result << pre_req["Connector Description"]
-  #   result << pre_req["Left Parenthesis"]
-  #   result << pre_req["pre-requisite"]
-  #   result << pre_req["Concurrency Indicator"]
-  #   result << pre_req["Right Parenthesis"]
-  # end
+  query_results(csv_results)
 
-  # result
-
-  # if result == []
-  #   "That course was not found. Please try another course."
-  # elsif result.compact == [" "]
-  #   "This course does not have any pre-requisites."
-  # else
-  #   if result.include? "Y"
-  #     concurrency = []
-  #     result.compact.each do |item|
-  #       if item == "Y"
-  #         concurrency << "- can be taken concurrently"
-  #       else
-  #         concurrency << item
-  #       end
-  #     end
-  #     concurrency.join(" ")
-  #   else
-  #     result.compact.join(" ")
-  #   end
-  # end
 end
 
-# p pre_req_check("ECE 201")
+p pre_req_check("BMES 302")
