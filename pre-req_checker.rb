@@ -45,7 +45,6 @@ def pre_req_check(input)
         postreqs = Hash.new
         postreqs["postreq"] = header["Cat Course"]
         postreqs["Concurrency Indicator"] = header["Cat Preq Concurrency Ind"]
-        postreqs["Concurrency Course"] = header["Cat Course"]
       end
       post_requisite_data << postreqs
       
@@ -72,15 +71,25 @@ def pre_req_check(input)
       clean_pre_req << pre_req["Concurrency Indicator"]
       clean_pre_req << pre_req["Right Parenthesis"]
     end
-    clean_pre_req = clean_pre_req.compact.map do |item|
-      if item == "Y"
-        item = "- can be taken concurrently"
-      else
-        item
-      end
-    end
+    clean_pre_req = clean_pre_req.compact.map { |item| item == "Y" ? item = "- can be taken concurrently" : item }.join(" ")
 
     clean_info << clean_pre_req
+
+    # pre-req cleanup
+    clean_post_req = []
+    post_req_extract = post_req_extract.compact.uniq
+
+    post_req_extract.each do |post_req|
+
+      if post_req["Concurrency Indicator"]
+        clean_post_req << "#{post_req["postreq"]} - can be taken concurrently"
+      else
+        clean_post_req << post_req["postreq"]
+      end
+
+    end
+
+    clean_info << clean_post_req.join(" ")
   end
 
   info_cleanup(pre_req_extract,post_req_extract)
@@ -125,4 +134,4 @@ def pre_req_check(input)
   # end
 end
 
-p pre_req_check("CHEM 245")
+p pre_req_check("ECE 201")
