@@ -100,7 +100,7 @@ def pre_req_check(input)
       csv_results[0] = "None Found."
     end
 
-    if csv_results[0] == "" || csv_results[0] == " "
+    if csv_results[-1] == "" || csv_results[-1] == " "
       csv_results[-1] = "None Found."
     end
 
@@ -111,4 +111,4 @@ def pre_req_check(input)
 
 end
 
-p pre_req_check("BMES 302")
+p pre_req_check("HIST 201")
