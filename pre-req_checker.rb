@@ -62,8 +62,9 @@ def pre_req_check(input)
     clean_info = []
     # pre-req cleanup
     clean_pre_req = []
-    pre_req_extract = pre_req_extract.compact.uniq
-    
+    # TODO - Hash needs to be sorted by sequence number here.
+    pre_req_extract = pre_req_extract.compact.uniq.sort_by { |hash| hash["Sequence Number"] }
+
     pre_req_extract.each do |pre_req|
       clean_pre_req << pre_req["Connector Description"]
       clean_pre_req << pre_req["Left Parenthesis"]
@@ -92,6 +93,7 @@ def pre_req_check(input)
     clean_info << clean_post_req.join(", ")
   end
 
+  info_cleanup(pre_req_extract,post_req_extract)
   csv_results = info_cleanup(pre_req_extract,post_req_extract)
 
   def query_results(csv_results)
@@ -111,4 +113,4 @@ def pre_req_check(input)
 
 end
 
-p pre_req_check("HIST 201")
+p pre_req_check("BMES 451")
