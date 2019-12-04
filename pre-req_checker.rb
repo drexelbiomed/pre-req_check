@@ -29,7 +29,7 @@ def pre_req_check(input)
       # Gathers pre-req info
       if header["Cat Course"] == course
         prereqs = Hash.new
-        prereqs["Sequence Number"] = header["Cat Preq Seqno"]
+        prereqs["Sequence Number"] = header["Cat Preq Seqno"].to_i
         prereqs["Connector"] = header["Cat Preq Connector"]
         prereqs["Connector Description"] = header["Cat Preq Conn Desc"]
         prereqs["Left Parenthesis"] = header["Cat Preq Lparen"]
@@ -64,7 +64,7 @@ def pre_req_check(input)
     clean_pre_req = []
     # TODO - Hash needs to be sorted by sequence number here.
     pre_req_extract = pre_req_extract.compact.uniq.sort_by { |hash| hash["Sequence Number"] }
-
+    puts pre_req_extract
     pre_req_extract.each do |pre_req|
       clean_pre_req << pre_req["Connector Description"]
       clean_pre_req << pre_req["Left Parenthesis"]
@@ -113,4 +113,4 @@ def pre_req_check(input)
 
 end
 
-p pre_req_check("BMES 451")
+p pre_req_check("MATH 121")
