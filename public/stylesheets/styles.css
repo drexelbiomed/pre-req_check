@@ -12,7 +12,7 @@
   ". image ."
   ". title ."
   ". input ."
-  ". output .";
+  "output output output";
   grid-row-gap: 20px;
 }
 

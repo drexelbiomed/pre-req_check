@@ -113,4 +113,4 @@ def pre_req_check(input)
 
 end
 
-p pre_req_check("MATH 121")
+# p pre_req_check("BMES 326")
