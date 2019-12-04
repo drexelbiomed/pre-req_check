@@ -37,8 +37,8 @@ def pre_req_check(input)
         prereqs["Concurrency Indicator"] = header["Cat Preq Concurrency Ind"]
         prereqs["Right Parenthesis"] = header["Cat Preq Rparen"]
       end
+      
       pre_requisite_data << prereqs
-  
       
       # Gathers post-req info
       if header["Cat Preq Course"] == course
@@ -62,9 +62,9 @@ def pre_req_check(input)
     clean_info = []
     # pre-req cleanup
     clean_pre_req = []
-    # TODO - Hash needs to be sorted by sequence number here.
-    pre_req_extract = pre_req_extract.compact.uniq.sort_by { |hash| hash["Sequence Number"] }
-    puts pre_req_extract
+
+    pre_req_extract = pre_req_extract.compact.uniq.sort_by { |hash| hash["Sequence Number"] }.select { |hash| hash["pre-requisite"] != " " }
+
     pre_req_extract.each do |pre_req|
       clean_pre_req << pre_req["Connector Description"]
       clean_pre_req << pre_req["Left Parenthesis"]
