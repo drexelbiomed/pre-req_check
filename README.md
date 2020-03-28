@@ -1,22 +1,19 @@
 # Pre-requisite Check
 
-Web application that identifies pre-requisites, co-requisites, and post-requisites for entered course. Made with [Sinatra](http://sinatrarb.com/), [Ruby](http://www.ruby-lang.org/en/), CSS Grid for layout, and [Bootstrap](https://getbootstrap.com/) for minor styling.
+Pre-requisite Check is a web application that identifies pre-requisites, co-requisites, and post-requisites for entered course. Made with [Sinatra](http://sinatrarb.com/), [Ruby](http://www.ruby-lang.org/en/), CSS Grid for layout, and [Bootstrap](https://getbootstrap.com/) for minor styling. Styled with the [Drexel University Website Design & Branding Standards](https://drexel.edu/identity/web/design-standards/) in mind.
 
-## App Link
-Current state of application can be viewed here: [Pre-req Check](https://pre-req-check.herokuapp.com/).
-Anything from the [Course Descriptions page](http://catalog.drexel.edu/coursedescriptions/quarter/undergrad/) will work, but enter MATH 300 or BMES 202 for a quick test.
+Current state of application can be viewed here: [Pre-req Check](https://pre-req-check.herokuapp.com/). This application works for any course from the University. A complete list can be found on the [Course Descriptions page](http://catalog.drexel.edu/coursedescriptions/quarter/undergrad/). But if you want to just do a quick search you can enter MATH 300 or BMES 202.
 
-## Known Issues
-* Some courses begin result with "And" or "Or". Known course(s): BMES 325, BMES 451.
-* Some courses end with "And" or "Or". Known course(s): MATH 121.
-* Does not recognize course without space. (BMES302)
+## Usage
 
-## To-do list
+Use the Ruby version manager [rbenv](https://github.com/rbenv/rbenv#installation) to install Ruby.
 
-* Impliment error handling for input.
-* Output should contain minimum grade.
-* Account for all input edge cases.
+Then install the Sinatra gem with `gem install sinatra`.
 
-## Wish List
+Clone the repo with `git clone git@github.com:drexelbiomed/pre-req_check.git`
 
-* Auto-complete for input.
+Once in the project directory, run it locally with `ruby main.rb` and go to `http://localhost:4567/`in your browser to view.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
