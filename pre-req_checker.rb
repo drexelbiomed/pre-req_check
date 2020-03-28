@@ -29,7 +29,7 @@ def pre_req_check(input)
       # Gathers pre-req info
       if header["Cat Course"] == course
         prereqs = Hash.new
-        prereqs["Sequence Number"] = header["Cat Preq Seqno"]
+        prereqs["Sequence Number"] = header["Cat Preq Seqno"].to_i
         prereqs["Connector"] = header["Cat Preq Connector"]
         prereqs["Connector Description"] = header["Cat Preq Conn Desc"]
         prereqs["Left Parenthesis"] = header["Cat Preq Lparen"]
@@ -37,8 +37,8 @@ def pre_req_check(input)
         prereqs["Concurrency Indicator"] = header["Cat Preq Concurrency Ind"]
         prereqs["Right Parenthesis"] = header["Cat Preq Rparen"]
       end
+      
       pre_requisite_data << prereqs
-  
       
       # Gathers post-req info
       if header["Cat Preq Course"] == course
@@ -62,8 +62,9 @@ def pre_req_check(input)
     clean_info = []
     # pre-req cleanup
     clean_pre_req = []
-    pre_req_extract = pre_req_extract.compact.uniq
-    
+
+    pre_req_extract = pre_req_extract.compact.uniq.sort_by { |hash| hash["Sequence Number"] }.select { |hash| hash["pre-requisite"] != " " }
+
     pre_req_extract.each do |pre_req|
       clean_pre_req << pre_req["Connector Description"]
       clean_pre_req << pre_req["Left Parenthesis"]
@@ -92,6 +93,7 @@ def pre_req_check(input)
     clean_info << clean_post_req.join(", ")
   end
 
+  info_cleanup(pre_req_extract,post_req_extract)
   csv_results = info_cleanup(pre_req_extract,post_req_extract)
 
   def query_results(csv_results)
@@ -100,7 +102,7 @@ def pre_req_check(input)
       csv_results[0] = "None Found."
     end
 
-    if csv_results[0] == "" || csv_results[0] == " "
+    if csv_results[-1] == "" || csv_results[-1] == " "
       csv_results[-1] = "None Found."
     end
 
@@ -111,4 +113,4 @@ def pre_req_check(input)
 
 end
 
-p pre_req_check("BMES 302")
+# p pre_req_check("BMES 326")

@@ -1,8 +1,8 @@
 # Pre-requisite Check
 
-Pre-requisite Check is a web application that identifies pre-requisites, co-requisites, and post-requisites for entered course. Made with [Sinatra](http://sinatrarb.com/), [Ruby](http://www.ruby-lang.org/en/), CSS Grid for layout, and [Bootstrap](https://getbootstrap.com/) for minor styling. Styled with the [Drexel University Website Design & Branding Standards](https://drexel.edu/identity/web/design-standards/) in mind.
+Pre-requisite Check is a web application that identifies pre-requisites, co-requisites, and post-requisites for an entered course. Made with [Sinatra](http://sinatrarb.com/), [Ruby](http://www.ruby-lang.org/en/). Styled with [Bootstrap](https://getbootstrap.com/) and with the [Drexel University Website Design & Branding Standards](https://drexel.edu/identity/web/design-standards/) in mind.
 
-Current state of application can be viewed here: [Pre-req Check](https://pre-req-check.herokuapp.com/). This application works for any course from the University. A complete list can be found on the [Course Descriptions page](http://catalog.drexel.edu/coursedescriptions/quarter/undergrad/). But if you want to just do a quick search you can enter MATH 300 or BMES 202.
+Application can be viewed here: [Pre-req Check](https://pre-req-check.herokuapp.com/). This application works for any course at Drexel University for the 2019-2020 catalog year. The complete course list can be found on the [Course Descriptions page](http://catalog.drexel.edu/coursedescriptions/quarter/undergrad/). If you'd like to do a quick search you can enter MATH 300 or BMES 202.
 
 ## Usage
 
